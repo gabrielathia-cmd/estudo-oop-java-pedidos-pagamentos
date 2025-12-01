@@ -1,5 +1,6 @@
 package classes;
 import java.util.ArrayList;
+import enums.Status;
 
 public class Mercado {
     private String nomeMercado;
@@ -38,6 +39,22 @@ public class Mercado {
 
 //Métodos
 
+    public ArrayList<Pedido> getPedidosbyStatus(Status status) {
+        ArrayList<Pedido> pedidosF = new ArrayList<>();
+        for (Pedido pedido : this.pedidos) {
+            if (pedido.getStatus() == status) {
+                pedidosF.add(pedido);
+            }
+        }
+        betterviewLis(pedidosF);
+        return pedidosF;
+    }
 
+//Auxiliares
 
+    private void betterviewLis(ArrayList<Pedido> pedidosF) {
+        for (int i = 0; i < pedidos.size(); i++) {
+            pedidosF.get(i).mostrarPedidobyId(i);
+        }
+    }
 }

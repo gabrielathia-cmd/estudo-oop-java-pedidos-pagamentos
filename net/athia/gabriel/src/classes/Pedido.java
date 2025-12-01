@@ -73,6 +73,8 @@ public class Pedido {
         this.itens.clear();
     }
 
+//Auxiliares
+
     public boolean validarItem(Item item) {
         if (item != null) {
             return true;
@@ -93,4 +95,9 @@ public class Pedido {
         }
         return false;
     }
+
+    public String mostrarPedidobyId(int id) {
+        return "ID " + id + " Valor Pedido: " + this.valorPedido + " Status: " + this.status;
+    }
+
 }
